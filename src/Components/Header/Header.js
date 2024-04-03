@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import "./styles.css"
+import Search from "../Search/Search"
 
-function Navbar(props){
+function Header(props){
 
     let menu = [
         {
@@ -23,18 +24,23 @@ function Navbar(props){
         }
     ]
 
-    return(<header>
-                <img className="imgHeader" src="https://st5.depositphotos.com/78668328/65648/v/450/depositphotos_656484306-stock-illustration-cinema-film-icon-film-reel.jpg" alt="logo" />
+    return(
+            <header>
+
+                <img className="logoHeader" src="./img/logoPage.png" alt="logo" />
+
                 <nav>
-                    <ul>
+                    <ul className="listaMenu"> 
                         {
-                        menu.map((elm, idx) => <li> <Link to={elm.ruta}>{elm.nombre}</Link> </li>)
+                        menu.map((elm, idx) => <li> <Link className ="eachMenu" to={elm.ruta}>{elm.nombre}</Link> </li>)
                         }
                     </ul>
                 </nav>
+
+                <Search/>
             </header>
     )
     
 }
 
-export default Navbar
+export default Header

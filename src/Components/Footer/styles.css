@@ -1,0 +1,17 @@
+.footer{
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 16vh;
+
+}
+
+.names{
+    color: #fff;
+    font-size:1.2em;
+    font-family: sans-serif;   
+     
+}
