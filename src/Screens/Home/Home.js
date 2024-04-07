@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 //2 grupos de contenido 
 import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../../Components/CartelContenedor/CartelContenedor'
+import {options} from "../../Utils/Constants";
 import { Link } from 'react-router-dom'
 import "./styles.css"
-let PeliculasPopulares = 'https://api.themoviedb.org/3/movie/popular'
+let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular"
 let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing"
 
 
@@ -26,10 +27,10 @@ class Home extends Component {
 
     // Se arma el fetch de cada uno por separado
     traerPopulares() {
-        fetch(PeliculasPopulares)
+        fetch(PeliculasPopulares,options)
             .then(resp => resp.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 this.setState({
                     // para que me de resultados hasta 5
                     filmPopulares: data.results.slice(0, 5)
@@ -39,7 +40,7 @@ class Home extends Component {
     }
 
     traerCartelera() {
-        fetch(PeliculasCartel)
+        fetch(PeliculasCartel, options)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
@@ -58,7 +59,7 @@ class Home extends Component {
                 {/* Le agregamos un link para que una vez que se aprete en este se diriga a  peliculas populares, en vez de usar <a>*/}
 
                 <button>
-                    <Link to="/sitePopulares">
+                    <Link to={"/sitePopulares"}>
                         {this.state.pText} 
                     </Link>
                 </button>
@@ -73,10 +74,11 @@ class Home extends Component {
                  {/* Le agregamos un link para que una vez que se aprete en este se diriga al cartel de las peliculas, en vez de usar <a>*/}
 
                 <button>
-                    <Link to="/siteCarteleraFilms">
+                    <Link to={"/siteCarteleraFilms"}>
                         {this.state.pText} 
                     </Link>
                 </button>
+
                 <CartelContenedor
                 filmsCartel = {this.state.filmsCartel}
                 />
