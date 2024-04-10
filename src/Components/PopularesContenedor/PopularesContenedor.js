@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Populares from '../Populares/Populares'
+import "./styles.css"
+
 class PopularesContenedor extends Component {
   constructor(props){
     super(props)
@@ -8,6 +10,7 @@ class PopularesContenedor extends Component {
   render() {
     return (
       <section className='ContenedorPopulares'>
+        
         {
           this.props.filmPopulares.length === 0 ?
           <h1 className='titles'> Buscando Peliculas ... </h1>

@@ -12,6 +12,7 @@ import Cartel from '../Cartel/Cartel'
    
     return (
       <section className='ContenedorCartel'>
+        
         {
           this.props.filmsCartel.length === 0 ?
           <h1 className='titles'> Buscando Peliculas ... </h1>

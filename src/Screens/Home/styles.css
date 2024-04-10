@@ -1,6 +1,25 @@
 .titles {
     text-align: center;
-    color: #000;
     font-weight: bold;
   }
-  
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.BtnVerMas{
+  padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.BtnVerMas button {
+  font-size: 20px;
+  background-color: rgba(126, 123, 123, 0.233);
+}
+

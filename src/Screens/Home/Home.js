@@ -54,34 +54,44 @@ class Home extends Component {
     render() {
         return (
             <main>
-                <h2 className="titlePopulares">Peliculas  Populares</h2>
+                <h2 className="titles">Peliculas  Populares</h2>
 
                 {/* Le agregamos un link para que una vez que se aprete en este se diriga a  peliculas populares, en vez de usar <a>*/}
 
+           
+                <PopularesContenedor 
+                
+                //le enviamos props al componente PopularesContenedor
+                filmPopulares = {this.state.filmPopulares}
+                />
+
+                
+                <article  className='BtnVerMas'>
                 <button>
                     <Link to={"/sitePopulares"}>
                         {this.state.pText} 
                     </Link>
                 </button>
+                </article>
 
-                <PopularesContenedor 
-                //le enviamos props al componente PopularesContenedor
-                filmPopulares = {this.state.filmPopulares}
-                />
-
-                <h2 className="titleDeCarteleras">Peliculas en Cartelera </h2>
+                <h2 className="titles">Peliculas en Cartelera </h2>
 
                  {/* Le agregamos un link para que una vez que se aprete en este se diriga al cartel de las peliculas, en vez de usar <a>*/}
 
-                <button>
-                    <Link to={"/siteCarteleraFilms"}>
-                        {this.state.pText} 
-                    </Link>
-                </button>
+             
 
                 <CartelContenedor
                 filmsCartel = {this.state.filmsCartel}
                 />
+
+                <article className='BtnVerMas'>
+                <button >
+                    <Link className="BtnVerMasLink" to={"/siteCarteleraFilms"}>
+                        {this.state.pText} 
+                    </Link>
+                </button>
+                </article>
+               
             </main>
         )
     }
