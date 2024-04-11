@@ -67,11 +67,13 @@ class Home extends Component {
 
                 
                 <article  className='BtnVerMas'>
+
                 <button>
                     <Link to={"/sitePopulares"}>
-                        {this.state.pText} 
+                        <p className='textBtnTodas'>{this.state.pText} </p>
                     </Link>
                 </button>
+
                 </article>
 
                 <h2 className="titles">Peliculas en Cartelera </h2>
@@ -87,7 +89,7 @@ class Home extends Component {
                 <article className='BtnVerMas'>
                 <button >
                     <Link className="BtnVerMasLink" to={"/siteCarteleraFilms"}>
-                        {this.state.pText} 
+                        <p  className='textBtnTodas'>{this.state.pText} </p>
                     </Link>
                 </button>
                 </article>
