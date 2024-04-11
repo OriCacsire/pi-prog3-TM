@@ -6,22 +6,42 @@ header{
     align-items: center;
     justify-content: space-between;
     background-color: #000;
-
+    height: 16vh;
+    padding-left: 6px;
+    padding-right: 15px;
 
 }
 
 /* estilo a navegacion */
 
+@import url(https://db.onlinewebfonts.com/c/aaee945749e26ae5d900b6e4fcf6e5a5?family=Gotham+HTF+Ultra);
+
+.listaMenu {
+    display: flex;
+    width: 55vw;
+    justify-content: space-between;
+    font-family: "Gotham HTF Ultra";
+}
+
+
 
 .eachMenu{
-    color:#fff
+    color:#ffffffea;
+    text-decoration: none
 }
 
 
 /* estilo logo */
 .logoHeader{
-    width: 10%;
-    height: 15%;
+    width: 7%;
 }
 
 /* Estilo formulario */
+
+.searchInput{
+    background-color: #f2f2f236;
+    border: none;
+    padding: 10px;
+    color: white;
+    
+}
