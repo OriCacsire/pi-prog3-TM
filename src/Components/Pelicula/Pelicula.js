@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import "./styles.css"
+
 class Pelicula extends Component {
 
     constructor(props){
