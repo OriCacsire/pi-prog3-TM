@@ -8,6 +8,8 @@ main{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #0f171e;
+    color: #d4d7da;
     
 }
 
@@ -19,7 +21,24 @@ main{
 }
 
 .BtnVerMas button {
-  font-size: 20px;
-  background-color: rgba(126, 123, 123, 0.233);
+  cursor: pointer;
+  background-color: #0f79af;
+  min-width: 100px;
+  border: none;
+  border-radius: 4px;
+  height: 38px;
+  /* padding: 0 10px; */
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.textBtnTodas {
+  color: #f2f4f6;
+  font-size: 18px;
+
+  text-decoration: none;
 }
 
