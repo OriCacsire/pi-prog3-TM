@@ -5,7 +5,6 @@ function Footer() {
 
     return (
         <footer>
-            <section className='footer'>
                 <article className='names'>
                     Francisco del Yerro
                 </article>
@@ -15,7 +14,6 @@ function Footer() {
                 <article className='names'>
                     Oriana Cacsire
                 </article>
-            </section>
         </footer>
     )
 

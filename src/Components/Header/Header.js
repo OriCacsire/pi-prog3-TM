@@ -7,19 +7,19 @@ function Header(props){
 
     let menu = [
         {
-            nombre: 'Home',
+            nombre: 'HOME',
             ruta: '/',
         },
         {
-            nombre: 'Peliculas en cartelera',
+            nombre: 'PELICULAS EN CARTELERA',
             ruta: '/cartelera',
         },
         {
-            nombre: 'Peliculas más populares',
+            nombre: 'PELICULAS MÁS POPULARES',
             ruta: '/masPopulares',
         },
         {
-            nombre: 'Favoritos',
+            nombre: 'FAVORITOS',
             ruta: '/favoritos',
         }
     ]

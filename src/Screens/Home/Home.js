@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 //2 grupos de contenido 
 import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../../Components/CartelContenedor/CartelContenedor'
-import {options} from "../../Utils/Constants";
 import { Link } from 'react-router-dom'
 import "./styles.css"
-let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular"
-let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing"
+let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
+let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
 
 class Home extends Component {
@@ -27,7 +26,7 @@ class Home extends Component {
 
     // Se arma el fetch de cada uno por separado
     traerPopulares() {
-        fetch(PeliculasPopulares,options)
+        fetch(PeliculasPopulares)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
@@ -40,12 +39,12 @@ class Home extends Component {
     }
 
     traerCartelera() {
-        fetch(PeliculasCartel, options)
+        fetch(PeliculasCartel)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
                 this.setState({
-                    filmsCartel: data.results.slice(0, 5)
+                    filmsCartel: data.results.slice(0,5)
                 })
             })
             .catch(error => console.log(error))
@@ -54,34 +53,46 @@ class Home extends Component {
     render() {
         return (
             <main>
-                <h2 className="titlePopulares">Peliculas  Populares</h2>
+                <h2 className="titles">Peliculas  Populares</h2>
 
                 {/* Le agregamos un link para que una vez que se aprete en este se diriga a  peliculas populares, en vez de usar <a>*/}
 
-                <button>
-                    <Link to={"/TodasPopulares"}>
-                        {this.state.pText} 
-                    </Link>
-                </button>
-
+           
                 <PopularesContenedor 
+                
                 //le enviamos props al componente PopularesContenedor
                 filmPopulares = {this.state.filmPopulares}
                 />
 
-                <h2 className="titleDeCarteleras">Peliculas en Cartelera </h2>
+                
+                <article  className='BtnVerMas'>
+
+                <button>
+                    <Link to={"/sitePopulares"}>
+                        <p className='textBtnTodas'>{this.state.pText} </p>
+                    </Link>
+                </button>
+
+                </article>
+
+                <h2 className="titles">Peliculas en Cartelera </h2>
 
                  {/* Le agregamos un link para que una vez que se aprete en este se diriga al cartel de las peliculas, en vez de usar <a>*/}
 
-                <button>
-                    <Link to={"/siteCarteleraFilms"}>
-                        {this.state.pText} 
-                    </Link>
-                </button>
+             
 
                 <CartelContenedor
                 filmsCartel = {this.state.filmsCartel}
                 />
+
+                <article className='BtnVerMas'>
+                <button >
+                    <Link className="BtnVerMasLink" to={"/siteCarteleraFilms"}>
+                        <p  className='textBtnTodas'>{this.state.pText} </p>
+                    </Link>
+                </button>
+                </article>
+               
             </main>
         )
     }

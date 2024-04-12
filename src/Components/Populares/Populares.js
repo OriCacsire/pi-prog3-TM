@@ -87,7 +87,7 @@ class Populares extends Component {
 
   render() {
     return (
-      <article >
+      <article className='articleMovie'>
       {/* la informacion de las props se recibe de cartelContenedor */}
       <img className='imgHomePopulares' src= {this.props.imagen} alt ="img"/>
 

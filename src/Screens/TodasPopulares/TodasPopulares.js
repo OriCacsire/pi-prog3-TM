@@ -1,52 +1,82 @@
 import React, { Component } from 'react'
-import {options} from "../../Utils/Constants";
+import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
+import FormFiltro from '../../Components/FormFiltro/FormFiltro'
 
-import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor';
-import { Link } from 'react-router-dom';
-let PeliculasPopulares = `https://api.themoviedb.org/3/movie/popular`
+let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
-
-export default class TodasPopulares extends Component {
+ class TodasPopulares extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            popular: [],
+            filmPopulares: [],
+            // favorito
+            backup:[],
             page: 1
         }
     }
     componentDidMount(){
-        fetch(PeliculasPopulares, options)
+        fetch(PeliculasPopulares)
         .then(resp => resp.json())
         .then(data =>{
-            console.log(data);
             this.setState ({
-                popular : data.results.slice(0,10)
+                filmPopulares: data.results,
+                backup:data.results,
+                page: this.state.page + 1
+
             })
         })
         .catch(err => console.log(err))
 
     }
+
     masPopulares(){
-        fetch(PeliculasPopulares +  '?page='+ (this.state.page + 1),options)
+        fetch(`${PeliculasPopulares}&page=${(this.state.page + 1)}`)
         .then(resp => resp.json())
-        .then(data => {
+        .then(data => 
+            {
             this.setState({
-                popular: this.state.popular.concat(data.results),
+                filmPopulares: this.state.filmPopulares.concat(data.results),
+                backup:this.state.backup.concat(data.results),
                 page: this.state.page + 1
             })
         })
         .catch(err => console.log(err))
 
     }
+
+     //filtro peliculas respecto al form
+     filtrarPeliculas(valorInput) {
+        let peliculasFiltradas = this.state.backup.filter(
+            (elm) => elm.title.toLowerCase().includes (valorInput.toLowerCase()))
+            console.log(peliculasFiltradas);
+
+        
+        this.setState({
+            filmPopulares:peliculasFiltradas
+        })
+    }
+
 render() {
     return (
-      <div>
-        <h2>
-            TodasPopulares
-        </h2>
-        <PopularesContenedor filmPopulares = {this.state.popular}/>
-        <button onClick={()=>this.masPopulares()}>ver mas </button>
-      </div>
+      <main>
+            <h2 className='titleCartelera'>Peliculas Populares</h2>
+
+            <FormFiltro 
+            filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
+
+            <PopularesContenedor 
+            filmPopulares = {this.state.filmPopulares}
+            />
+
+            {/* {LOADER DE CARGANDO} */}
+            <section className='contenedorVerMas'>
+                <button onClick={()=> this.masPopulares()}>
+                    Mas peliculas
+                </button>
+            </section>
+
+        </main>
     )
   }
 }
+export default TodasPopulares

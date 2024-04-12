@@ -4,7 +4,9 @@ import Header from "./Components/Header/Header";
 import Home from "./Screens/Home/Home"
 import Footer from "./Components/Footer/Footer";
 import DetallePelicula from "./Screens/DetallePelicula/DetallePelicula";
-import TodasPopulares from "./Screens/TodasPopulares/TodasPopulares"; // Importa el componente TodasPopulares
+import TodasCartelera from "./Screens/TodasCartelera/TodasCartelera";
+import TodasPopulares from "./Screens/TodasPopulares/TodasPopulares";
+import Favorito from "./Screens/Favorito"
 
 function App() {
 
@@ -15,7 +17,13 @@ function App() {
         {/* RUTAS */}
         <Route path='/' exact={true} component={Home}/>
         <Route path={'/detallePelicula/id/:id'} component= {DetallePelicula}/>
-        <Route path='/TodasPopulares' component={TodasPopulares}/> {/* Agrega la ruta para TodasPopulares */}
+        <Route path='/siteCarteleraFilms' component={TodasCartelera} /> 
+        <Route path='/sitePopulares' component={TodasPopulares}/>
+        {/* ruta favoritos */}
+        <Route path="/favoritos" component= {Favorito}/>
+        
+        {/* ruta sesultados busqueda */}
+        {/* ruta not found */}
       </Switch>
 
       <Footer />
