@@ -59,7 +59,7 @@ class Home extends Component {
                 {/* Le agregamos un link para que una vez que se aprete en este se diriga a  peliculas populares, en vez de usar <a>*/}
 
                 <button>
-                    <Link to={"/sitePopulares"}>
+                    <Link to={"/TodasPopulares"}>
                         {this.state.pText} 
                     </Link>
                 </button>

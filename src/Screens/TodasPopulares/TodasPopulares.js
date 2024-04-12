@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import PopularesContainer from "../PopularesContainer/index"
+import {options} from "../../Utils/Constants";
+
+import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor';
+import { Link } from 'react-router-dom';
+let PeliculasPopulares = `https://api.themoviedb.org/3/movie/popular`
 
 
 export default class TodasPopulares extends Component {
@@ -11,7 +15,10 @@ export default class TodasPopulares extends Component {
         }
     }
     componentDidMount(){
-        fetch("https://api.themoviedb.org/3/movie/popular").then(resp => resp.json()).then(data =>{
+        fetch(PeliculasPopulares, options)
+        .then(resp => resp.json())
+        .then(data =>{
+            console.log(data);
             this.setState ({
                 popular : data.results.slice(0,10)
             })
@@ -20,7 +27,7 @@ export default class TodasPopulares extends Component {
 
     }
     masPopulares(){
-        fetch("https://api.themoviedb.org/3/movie/popular?page=" + (this.state.page + 1))
+        fetch(PeliculasPopulares +  '?page='+ (this.state.page + 1),options)
         .then(resp => resp.json())
         .then(data => {
             this.setState({
@@ -37,8 +44,8 @@ render() {
         <h2>
             TodasPopulares
         </h2>
-        <PopularesContainer popular = {this.state.popular}/>
-        <button onClick={this.masPopulares()}>ver mas </button>
+        <PopularesContenedor filmPopulares = {this.state.popular}/>
+        <button onClick={()=>this.masPopulares()}>ver mas </button>
       </div>
     )
   }
