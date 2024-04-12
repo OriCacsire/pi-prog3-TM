@@ -12,7 +12,7 @@ class TodasCartelera extends Component {
             filmsCartel:[],
             // favorito:localStorage.getItem("favorito") || [],
             backup:[],
-            page:1
+            page:0
         }
     }
 
@@ -23,8 +23,10 @@ class TodasCartelera extends Component {
         .then(data => {
             console.log(data)
             this.setState({
-            filmsCartel:data.results.slice(0,5),
-            backup:data.results.slice(0,5),
+            filmsCartel:data.results,
+            backup:data.results,
+            page: this.state.page + 1
+
             })
         })
         .catch(error=>console.log(error))
@@ -48,7 +50,7 @@ class TodasCartelera extends Component {
         .catch(error => console.log(error))
     }
     //filtro peliculas respecto al form
-    filtrarPelis(valorInput) {
+    filtrarPeliculas(valorInput) {
         let peliculasFiltradas = this.state.backup.filter(
             (elm) => elm.title.toLowerCase().includes (valorInput.toLowerCase()))
             console.log(peliculasFiltradas);
@@ -72,7 +74,7 @@ class TodasCartelera extends Component {
             <h2 className='titleCartelera'>Peliculas en Cartelera</h2>
 
             <FormFiltro 
-            filtrarPeliculas ={(valorInput)=> this.filtrarPelis(valorInput)}/>
+            filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
 
             <CartelContenedor 
             filmsCartel = {this.state.filmsCartel}
