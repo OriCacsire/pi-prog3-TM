@@ -17,8 +17,10 @@ function App() {
         <Route path='/' exact={true} component={Home}/>
         <Route path={'/detallePelicula/id/:id'} component= {DetallePelicula}/>
         <Route path='/siteCarteleraFilms' component={TodasCartelera} /> 
-
         <Route path='/sitePopulares' component={TodasPopulares}/>
+        {/* ruta favoritos */}
+        {/* ruta sesultados busqueda */}
+        {/* ruta not found */}
       </Switch>
 
       <Footer />

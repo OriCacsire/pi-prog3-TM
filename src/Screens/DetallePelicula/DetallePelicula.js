@@ -46,7 +46,6 @@ export default class DetallePelicula extends Component {
 
       
       }
-       {/* <h2>{this.state.filmInfo.original_title}</h2> */}
       </main>
     )
   }
