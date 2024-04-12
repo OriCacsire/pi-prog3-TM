@@ -27,9 +27,13 @@ header{
 
 .eachMenu{
     color:#ffffffea;
-    text-decoration: none
+    text-decoration: none;
+
 }
 
+.eachMenuLi{
+    list-style-type: none;
+}
 
 /* estilo logo */
 .logoHeader{
