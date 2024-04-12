@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import "./styles.css"
 import Search from "../Search/Search"
 
-function Header(props){
+function Header(){
 
     let menu = [
         {
@@ -12,11 +12,11 @@ function Header(props){
         },
         {
             nombre: 'PELICULAS EN CARTELERA',
-            ruta: '/cartelera',
+            ruta: '/siteCarteleraFilms',
         },
         {
             nombre: 'PELICULAS MÁS POPULARES',
-            ruta: '/masPopulares',
+            ruta: '/sitePopulares',
         },
         {
             nombre: 'FAVORITOS',
@@ -32,7 +32,7 @@ function Header(props){
                 <nav>
                     <ul className="listaMenu"> 
                         {
-                        menu.map((elm, idx) => <li> <Link className ="eachMenu" to={elm.ruta}>{elm.nombre}</Link> </li>)
+                        menu.map((elm, idx) => <li> <Link className ="eachMenu" to={elm.ruta} key={`${idx}${elm.path}`}>{elm.nombre}</Link> </li>)
                         }
                     </ul>
                 </nav>

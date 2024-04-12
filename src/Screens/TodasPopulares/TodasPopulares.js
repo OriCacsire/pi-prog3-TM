@@ -9,7 +9,6 @@ let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d38
         super(props)
         this.state = {
             filmPopulares: [],
-            // favorito
             backup:[],
             page: 1
         }
@@ -47,7 +46,7 @@ let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d38
      //filtro peliculas respecto al form
      filtrarPeliculas(valorInput) {
         let peliculasFiltradas = this.state.backup.filter(
-            (elm) => elm.title.toLowerCase().includes (valorInput.toLowerCase()))
+            (elm) => elm.title.toLowerCase().includes(valorInput.toLowerCase()))
             console.log(peliculasFiltradas);
 
         
@@ -71,7 +70,7 @@ render() {
             {/* {LOADER DE CARGANDO} */}
             <section className='contenedorVerMas'>
                 <button onClick={()=> this.masPopulares()}>
-                    Mas peliculas
+                    Más peliculas
                 </button>
             </section>
 
