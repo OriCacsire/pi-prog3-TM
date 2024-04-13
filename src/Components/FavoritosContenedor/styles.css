@@ -1,0 +1,8 @@
+.ContenedorCartel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+
+}
