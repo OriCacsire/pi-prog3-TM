@@ -29,7 +29,6 @@ class Home extends Component {
         fetch(PeliculasPopulares)
             .then(resp => resp.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     // para que me de resultados hasta 5
                     filmPopulares: data.results.slice(0, 5)
@@ -42,7 +41,6 @@ class Home extends Component {
         fetch(PeliculasCartel)
             .then(resp => resp.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     filmsCartel: data.results.slice(0,5)
                 })
@@ -68,8 +66,8 @@ class Home extends Component {
                 <article  className='BtnVerMas'>
 
                 <button>
-                    <Link to={"/sitePopulares"}>
-                        <p className='textBtnTodas'>{this.state.pText} </p>
+                    <Link className="BtnVerMasLink" to={"/sitePopulares"}>
+                        {this.state.pText}
                     </Link>
                 </button>
 
@@ -88,7 +86,7 @@ class Home extends Component {
                 <article className='BtnVerMas'>
                 <button >
                     <Link className="BtnVerMasLink" to={"/siteCarteleraFilms"}>
-                        <p  className='textBtnTodas'>{this.state.pText} </p>
+                        {this.state.pText}
                     </Link>
                 </button>
                 </article>

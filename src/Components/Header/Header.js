@@ -32,7 +32,7 @@ function Header(){
                 <nav>
                     <ul className="listaMenu"> 
                         {
-                        menu.map((elm, idx) => <li className="eachMenuLi"> <Link className ="eachMenu" to={elm.ruta} key={`${idx}${elm.path}`}>{elm.nombre}</Link> </li>)
+                        menu.map((elm, idx) => <li className="eachMenuLi" key={`${idx}${elm.path}`}> <Link className ="eachMenu" to={elm.ruta} >{elm.nombre}</Link> </li>)
                         }
                     </ul>
                 </nav>
