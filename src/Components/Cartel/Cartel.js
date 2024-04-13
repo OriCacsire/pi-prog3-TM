@@ -10,22 +10,30 @@ class Cartel extends Component {
       btnText: "Ver descripción",
       contenidoOculto: true,
       textDetalle: "Ir a Detalle",
-      favorito: false //si es false porque no lo esta, true si lo esta. Verificamos 
+      favorito: false  
     }
   }
 
   
   componentDidMount() {
-
-    // favoritos punto 9 
+    //Chequeo si está en favoritos
+    this.checkFavorite()
   }
 
-  // componentDidUpdate(){
-  //   if (this.state.contenidoOculto === false){
-  //     alert ("Desde el componente hicimos algo")
+ componentDidUpdate(prevProps){ //prevProps trae las props antiguas del componente
+  if (prevProps.id !== this.props.id) { //Entonces esto valida que no se este evaluando devuelta la misma pelicula que antes, para no ejecutar innecesariamente this.checkFavorite
+    this.checkFavorite();
+  }
+ }
 
-  //   }
-  // }
+  checkFavorite(){
+    let favoritoStringificado = localStorage.getItem("Favoritos")
+    if (favoritoStringificado !== null) {
+      let arrParseado = JSON.parse(favoritoStringificado)
+      let favorito = arrParseado.includes(this.props.id)
+      this.setState({favorito : favorito})
+    }
+  }
  
   ocultarYMostrarContenido(){
     this.state.contenidoOculto === true ?

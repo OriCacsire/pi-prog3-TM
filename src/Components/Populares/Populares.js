@@ -15,9 +15,25 @@ class Populares extends Component {
   }
 
 
-  componentDidMount() {
 
-    // favoritos punto 9 
+  componentDidMount() {
+    //Chequeo si está en favoritos
+    this.checkFavorite()
+  }
+
+componentDidUpdate(prevProps){ //prevProps trae las props antiguas del componente
+  if (prevProps.id !== this.props.id) { //Entonces esto valida que no se este evaluando devuelta la misma pelicula que antes, para no ejecutar innecesariamente this.checkFavorite
+    this.checkFavorite();
+  }
+}
+
+  checkFavorite(){
+    let favoritoStringificado = localStorage.getItem("Favoritos")
+    if (favoritoStringificado !== null) {
+      let arrParseado = JSON.parse(favoritoStringificado)
+      let favorito = arrParseado.includes(this.props.id)
+      this.setState({favorito : favorito})
+    }
   }
 
   ocultarYMostrarContenido(){
