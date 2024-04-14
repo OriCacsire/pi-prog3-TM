@@ -6,8 +6,11 @@ class Favorito extends Component {
     super(props)
     this.state = {
       favoritos: []
+      
     }
   }
+
+
 
   componentDidMount() {
     let arrStringificado = localStorage.getItem("Favoritos")
@@ -29,12 +32,18 @@ class Favorito extends Component {
   }
   
 
+  actualizarState(idPelicula){
+    console.log(this.state.favoritos);
+    let stateActualizado = this.state.favoritos.filter((filmFav) => filmFav.id !== idPelicula)
+    this.setState({favoritos: stateActualizado})
+  }
 
   render() {
     return (
       <main>
         <FavoritosContenedor 
-          filmsFavoritos = {this.state.favoritos}
+          actualizarState={(idPelicula) => this.actualizarState(idPelicula)}
+          filmsFavoritos={this.state.favoritos}
         />
       </main>
     )

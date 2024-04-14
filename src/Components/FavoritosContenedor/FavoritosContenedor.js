@@ -7,9 +7,10 @@ import "./styles.css"
     super(props)
   }
   
-  componentDidMount(){
-    console.log(this.props.filmsFavoritos);
-  }
+
+
+
+
 
   render() {
    
@@ -27,6 +28,7 @@ import "./styles.css"
             imagen ={"https://image.tmdb.org/t/p/w342" + peliFavs.poster_path} //Link de img segun consigna y peliCartel --> parametro y la prop del api
             title={peliFavs.title}
             descripcion = {peliFavs.overview}
+            actualizarState = {this.props.actualizarState ? (idpelicula) => this.props.actualizarState(idpelicula) : false}
             />
           
           )

@@ -45,11 +45,9 @@ class Cartel extends Component {
     // Guardar la cadena JSON actualizada en el almacenamiento local
     localStorage.setItem('Favoritos', arrStringificado);
     // Actualizar el estado de 'favorito' del componente a false
-    this.setState({
-      favorito: false
-    });
-  }
+    this.props.actualizarState(idPelicula)
 
+  }
 
 
 
