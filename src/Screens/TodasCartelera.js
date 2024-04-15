@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CartelContenedor from '../../Components/CartelContenedor/CartelContenedor'
-import FormFiltro from '../../Components/FormFiltro/FormFiltro'
+import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
+import FormFiltro from '../Components/FormFiltro/FormFiltro'
 
 //api a usar
 let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing?api_key=d3875133e7a115f2dc3fec2ed6786f75"
@@ -81,11 +81,11 @@ class TodasCartelera extends Component {
             />
 
             {/* {LOADER DE CARGANDO} */}
-            <section className='contenedorVerMas'>
-                <button onClick={()=> this.traerMasPeliculas()}>
+            <article className='BtnVerMas'>
+                <button className="BtnVerMasLink" onClick={()=> this.traerMasPeliculas()}>
                     Más peliculas
                 </button>
-            </section>
+                </article>
 
         </main>
         

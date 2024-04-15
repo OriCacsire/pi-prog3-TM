@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //2 grupos de contenido 
-import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
-import CartelContenedor from '../../Components/CartelContenedor/CartelContenedor'
+import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
+import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
 
 // import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'

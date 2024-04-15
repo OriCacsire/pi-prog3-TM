@@ -2,11 +2,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
-import Home from "./Screens/Home/Home"
+import Home from "./Screens/Home"
 import Footer from "./Components/Footer/Footer";
-import DetallePelicula from "./Screens/DetallePelicula/DetallePelicula";
-import TodasCartelera from "./Screens/TodasCartelera/TodasCartelera";
-import TodasPopulares from "./Screens/TodasPopulares/TodasPopulares";
+import DetallePelicula from "./Screens/DetallePelicula";
+import TodasCartelera from "./Screens/TodasCartelera";
+import TodasPopulares from "./Screens/TodasPopulares";
 import Favorito from "./Screens/Favorito"
 import NotFound404 from "./Screens/NotFound404";
 import ResultadoBusqueda from "./Screens/ResultadoBusqueda";

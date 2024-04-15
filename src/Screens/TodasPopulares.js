@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
-import FormFiltro from '../../Components/FormFiltro/FormFiltro'
+import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
+import FormFiltro from '../Components/FormFiltro/FormFiltro'
 
 let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
@@ -68,11 +68,11 @@ render() {
             />
 
             {/* {LOADER DE CARGANDO} */}
-            <section className='contenedorVerMas'>
-                <button onClick={()=> this.masPopulares()}>
+            <article className='BtnVerMas'>
+                <button className="BtnVerMasLink" onClick={()=> this.masPopulares()}>
                     Más peliculas
                 </button>
-            </section>
+                </article>
 
         </main>
     )
