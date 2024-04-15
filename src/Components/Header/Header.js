@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import "./styles.css"
-import FormBusqueda from "../FormBusqueda/FormBusqueda";
 
 function Header(props){
 
@@ -17,7 +16,6 @@ function Header(props){
                     </ul>
                 </nav>
 
-                <FormBusqueda/>
             </header>
     )
     
