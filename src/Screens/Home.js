@@ -6,9 +6,8 @@ import FormBusqueda from "../Components/FormBusqueda/FormBusqueda";
 import Loader from '../Components/Loader/Loader';
 // import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'
-import "./styles.css"
 let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
-let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing?api_key=d3875133e7a115f2dc3fec2ed6786f75"
+let PeliculasCartel = "https://api.themoviedb.org/3/movie/top_rated?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
 
 class Home extends Component {
