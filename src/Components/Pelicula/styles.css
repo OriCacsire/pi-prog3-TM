@@ -1,3 +1,15 @@
 .contenerPelicula{
+    display: flex;
+    flex-direction: row;
+}
+.generoList{
+    display: flex;
+}
+.imgPeli{
+    height: 74vh;
+    padding: 15px;
+}
+
+.generoList li{
     
 }
