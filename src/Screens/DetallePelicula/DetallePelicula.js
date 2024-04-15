@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import Pelicula from '../../Components/Pelicula/Pelicula'
-import {options} from "../../Utils/Constants"
 import "./styles.css"
 
-export default class DetallePelicula extends Component {
+ class DetallePelicula extends Component {
 
   constructor(props){
     super(props)
@@ -15,8 +14,7 @@ export default class DetallePelicula extends Component {
   
 
   componentDidMount(){
-
-      fetch("https://api.themoviedb.org/3/movie/" + this.state.id, options)
+      fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=d3875133e7a115f2dc3fec2ed6786f75` )
           .then(resp => resp.json())
           .then(data => {
               this.setState({
@@ -43,10 +41,9 @@ export default class DetallePelicula extends Component {
       <Pelicula
           peliculaInfoId={this.state.filmInfo }
       />
-
-      
       }
       </main>
     )
   }
 }
+export default  DetallePelicula

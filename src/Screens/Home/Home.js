@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 //2 grupos de contenido 
 import PopularesContenedor from '../../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../../Components/CartelContenedor/CartelContenedor'
+
+// import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'
 import "./styles.css"
 let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
@@ -14,6 +16,7 @@ class Home extends Component {
         this.state = {
             filmPopulares: [],
             filmsCartel: [],
+            allFilms:[], //para hacer el buscador
             pText: "Ver Todas"
 
         }
@@ -22,6 +25,13 @@ class Home extends Component {
     componentDidMount() {
         this.traerPopulares()
         this.traerCartelera()
+//agregamos todas las peli que se encuentran en home, luego hacemos un filtrarpeliculas con el valor input de parametro.
+
+        this.setState({
+            allFilms:this.state.filmPopulares + this.state.filmsCartel
+
+        })
+        console.log(this.state.allFilms)
     }
 
     // Se arma el fetch de cada uno por separado
@@ -48,9 +58,12 @@ class Home extends Component {
             .catch(error => console.log(error))
     }
 
+    //creamos un filtrarPeliculas.
+
     render() {
         return (
             <main>
+                {/* componenete de search se le envia el filtrarfilms con el valor Input  */}
                 <h2 className="titles">Peliculas  Populares</h2>
 
                 {/* Le agregamos un link para que una vez que se aprete en este se diriga a  peliculas populares, en vez de usar <a>*/}
@@ -89,7 +102,9 @@ class Home extends Component {
                         {this.state.pText}
                     </Link>
                 </button>
+
                 </article>
+
                
             </main>
         )
