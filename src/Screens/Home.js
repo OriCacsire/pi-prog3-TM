@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
 import FormBusqueda from "../Components/FormBusqueda/FormBusqueda";
-
+import Loader from '../Components/Loader/Loader';
 // import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'
 import "./styles.css"
@@ -63,6 +63,9 @@ class Home extends Component {
 
     render() {
         return (
+            this.state.filmPopulares.length === 0  || this.state.filmsCartel.length === 0 ?
+            <Loader/>
+            :
             <main>
                 <FormBusqueda history={this.props.history}/>
                 {/* componenete de search se le envia el filtrarfilms con el valor Input  */}

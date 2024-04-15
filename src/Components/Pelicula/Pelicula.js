@@ -28,8 +28,8 @@ class Pelicula extends Component {
 
           <ul className='generoList'>
             {
-              (this.props.peliculaInfoId.genres).map((genre) =>
-                <li>
+              (this.props.peliculaInfoId.genres).map((genre, idx) =>
+                <li key={idx + genre}>
                   {genre.name}
                 </li>
               )}
