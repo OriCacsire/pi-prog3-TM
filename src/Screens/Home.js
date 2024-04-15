@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 //2 grupos de contenido 
 import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
+import FormBusqueda from "../Components/FormBusqueda/FormBusqueda";
 
 // import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'
@@ -18,8 +19,8 @@ class Home extends Component {
             filmsCartel: [],
             allFilms:[], //para hacer el buscador
             pText: "Ver Todas"
-
         }
+        console.log('props de la home', props)
     }
 
     componentDidMount() {
@@ -63,6 +64,7 @@ class Home extends Component {
     render() {
         return (
             <main>
+                <FormBusqueda history={this.props.history}/>
                 {/* componenete de search se le envia el filtrarfilms con el valor Input  */}
                 <h2 className="titles">Peliculas  Populares</h2>
 

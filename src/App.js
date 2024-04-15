@@ -45,9 +45,10 @@ function App() {
         <Route path="/favoritos" component={Favorito} />
 
         {/* ruta sesultados busqueda */}
-        <Route path="busqueda/:busqueda" component={ResultadoBusqueda}></Route>
+        <Route path="/busqueda/:busqueda" component={ResultadoBusqueda}/>
         {/* ruta not found */}
-        <Route component={NotFound404}></Route>
+        <Route component={NotFound404}/>
+        
       </Switch>
 
       <Footer />
