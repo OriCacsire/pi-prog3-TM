@@ -10,6 +10,8 @@
     padding: 15px;
 }
 
-.generoList li{
-    
+
+
+li{
+    list-style-type: none;
 }

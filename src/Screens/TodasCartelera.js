@@ -3,7 +3,7 @@ import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
 import FormFiltro from '../Components/FormFiltro/FormFiltro'
 
 //api a usar
-let PeliculasCartel = "https://api.themoviedb.org/3/movie/now_playing?api_key=d3875133e7a115f2dc3fec2ed6786f75"
+let PeliculasCartel = "https://api.themoviedb.org/3/movie/top_rated?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
 class TodasCartelera extends Component {
     constructor(props){
