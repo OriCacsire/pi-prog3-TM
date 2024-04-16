@@ -92,7 +92,7 @@ class Resultados extends Component {
     </Link>
     {
               this.state.favorito  ?
-              <button className='favBtn' onClick={()=> this.removeFavorite(this.props.id)}>:heart: Sacar de Favorito</button>
+              <button className='favBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
               :
               <button onClick={()=> this.addFavorite(this.props.id)}>🩶 Agregar a Favorito</button>
     }

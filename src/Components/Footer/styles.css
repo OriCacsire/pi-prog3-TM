@@ -1,11 +1,10 @@
 footer{
-    background-color: #000000;
     display: flex;
     flex-wrap: wrap;
+    background-color: #000000;
     align-items: center;
     justify-content: space-evenly;
     height: 16vh;
-
 }
 
 .names{

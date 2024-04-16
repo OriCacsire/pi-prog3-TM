@@ -1,16 +1,20 @@
 .contenerPelicula{
     display: flex;
+    height: 51vh;
     flex-direction: row;
+    margin-top: 55px;
+    margin-bottom: 54px;
 }
 .generoList{
     display: flex;
 }
-.imgPeli{
-    height: 74vh;
+.divImgPeli{
+    height: 50vh;
     padding: 15px;
 }
-
-
+.contenidoPelicula{
+    margin-right: 30px;
+}
 
 li{
     list-style-type: none;

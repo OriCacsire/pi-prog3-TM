@@ -25,7 +25,6 @@ class Home extends Component {
     componentDidMount() {
         this.traerPopulares()
         this.traerCartelera()
-//agregamos todas las peli que se encuentran en home, luego hacemos un filtrarpeliculas con el valor input de parametro.
 
         this.setState({
             allFilms:this.state.filmPopulares + this.state.filmsCartel
@@ -58,7 +57,6 @@ class Home extends Component {
             .catch(error => console.log(error))
     }
 
-    //creamos un filtrarPeliculas.
 
     render() {
         return (
@@ -66,6 +64,7 @@ class Home extends Component {
             <Loader/>
             :
             <main>
+                
                 <FormBusqueda history={this.props.history}/>
                 {/* componenete de search se le envia el filtrarfilms con el valor Input  */}
                 <h2 className="titles">Peliculas  Populares</h2>

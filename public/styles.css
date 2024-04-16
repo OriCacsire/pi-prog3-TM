@@ -12,16 +12,26 @@ body{
 }
 
 main{
-    min-height: 85vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #000000ed;
     color: #d4d7da;
+    
 }
 
+/* Home */
 
+.sectionBusqueda{
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #000000ed;
+    color: #d4d7da
+}
 
 .titles {
     text-align: center;

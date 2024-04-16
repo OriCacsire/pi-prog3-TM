@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Pelicula from '../Components/Pelicula/Pelicula'
 import Loader from '../Components/Loader/Loader'
-import "./styles.css"
+// import "./styles.css"
 
  class DetallePelicula extends Component {
 
@@ -14,7 +14,6 @@ import "./styles.css"
     }
   }
   
-
   componentDidMount(){
     setTimeout(
       ()=> {
@@ -42,7 +41,7 @@ import "./styles.css"
       <Loader/>
       :
       //Usamos el componente de Pelicula.
-      <main className='mainDetallePelicula'>
+      <main>
         <Pelicula
             peliculaInfoId={this.state.filmInfo }
         />

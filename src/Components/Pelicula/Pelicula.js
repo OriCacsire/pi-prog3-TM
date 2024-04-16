@@ -77,18 +77,18 @@ this.setState({
     return (
 
       <article className='contenerPelicula'>
-        <div>
-          <img className='imgPeli' src={'https://image.tmdb.org/t/p/w500' + this.props.peliculaInfoId.poster_path}></img>
+        <div className='divImgPeli'>
+          <img  src={'https://image.tmdb.org/t/p/w500' + this.props.peliculaInfoId.poster_path} alt='img'></img>
         </div>
 
-        <div>
+        <div className='contenidoPelicula'>
           <h1 className='TituloFilm'>Movie: {this.props.peliculaInfoId.title}</h1>
           {/* Como generos es un array se debe recorrer con map y mostrar el genero */}
 
           <ul className='generoList'>
             {
               (this.props.peliculaInfoId.genres).map((genre, idx) =>
-                <li key={idx + genre}>
+                <li key={idx + genre} >
                   {genre.name}
                 </li>
               )}

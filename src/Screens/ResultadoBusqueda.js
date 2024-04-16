@@ -23,10 +23,14 @@ export default class ResultadoBusqueda extends Component {
 
   render() {
     return (
-      <div>
-        <h2> resultados busqueda </h2>
+      this.state.busqueda.length !==0 ? 
+      <section className='sectionBusqueda'>
+           <h2> Resultado busqueda: {this.props.match.params.busqueda} </h2>
       <ResultadosContenedor busqueda= {this.state.busqueda}/>  
-      </div>
+      </section>
+      :
+      <h2>No se encontraron resultados para lo ingresado: {this.props.match.params.busqueda}</h2>
+      
     )
   }
 }
