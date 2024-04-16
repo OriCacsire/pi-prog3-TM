@@ -88,16 +88,15 @@ this.setState({
           <ul className='generoList'>
             {
               (this.props.peliculaInfoId.genres).map((genre, idx) =>
-                <li key={idx + genre} >
+                <li className="liGeneroList" key={idx + genre} >
                   {genre.name}
                 </li>
               )}
-
           </ul>
-          <p className='sinopsis'>Sinópsis:{this.props.peliculaInfoId.overview}</p>
-          <p className='descripcionRating'>Rating: {this.props.peliculaInfoId.vote_average}</p>
-          <p className='fechaEstreno'>Fecha de Estreno: {this.props.peliculaInfoId.release_date}</p>
-          <p className='duracion'>Duración:{this.props.peliculaInfoId.runtime}</p>
+          <p className='sinopsis'><strong>Sinópsis: </strong>{this.props.peliculaInfoId.overview}</p>
+          <p className='descripcionRating'><strong>Rating: </strong> {this.props.peliculaInfoId.vote_average}</p>
+          <p className='fechaEstreno'><strong>Fecha de Estreno:</strong> {this.props.peliculaInfoId.release_date}</p>
+          <p className='duracion'><strong>Duración: </strong>{this.props.peliculaInfoId.runtime}</p>
 
           {/* tira ERROR porque falta plantear el fav acá*/}
           {this.state.favorito ?

@@ -7,6 +7,8 @@
 }
 .generoList{
     display: flex;
+    flex-direction: row;
+    padding-left: 0px;
 }
 .divImgPeli{
     height: 50vh;
@@ -16,6 +18,10 @@
     margin-right: 30px;
 }
 
-li{
+.liGeneroList{
     list-style-type: none;
+    background-color: #9a9a9a9c;
+    border-radius: 17px;
+    margin-right: 15px;
+    padding: 10px;
 }
