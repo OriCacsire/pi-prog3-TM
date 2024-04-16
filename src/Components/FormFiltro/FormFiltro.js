@@ -24,10 +24,10 @@ class FormFiltro extends Component {
       this.evitarSubmit(evento)}>
         <input
           className="busqueda"
-          placeholder="Busca tu Pelicula"
           name="busqueda"
           type="text" 
-          onChange={(event) => this.capturarValor(event)} 
+          onChange={(evento) => this.capturarValor(evento)}
+          placeholder="Busca tu Pelicula" 
           value={this.state.valorInput}
         />
       </form>

@@ -2,16 +2,29 @@ import React, { Component } from 'react'
 import ResultadosContenedor from '../Components/ResultadosContenedor/ResultadosContenedor'
 
 export default class ResultadoBusqueda extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={
-      busqueda: []
+    this.state = {
+      busqueda: [],
     }
   }
-  componentDidMount(){
+  componentDidMount() {
     console.log(this.props.match.params.busqueda);
+   fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.busqueda}&include_adult=false&language=en-US&page=1&api_key=d3875133e7a115f2dc3fec2ed6786f75`)
+
+      .then(resp => resp.json())
+      .then(data => {
+        this.setState({
+          busqueda: data.results,
+
+        })
+      })
+      .catch(err => console.log(err))
+  }
+  //Después de que el componente se ha montado, si this.props.match.params.busqueda cambia (por ejemplo, porque el usuario realiza una nueva búsqueda), componentDidUpdate() se activa y realiza otra solicitud a la API con el nuevo parámetro de búsqueda. Se actualiza la busqueda cuando estamos en la pagina de resultado busqueda
+  componentDidUpdate() {
     fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.busqueda}&include_adult=false&language=en-US&page=1&api_key=d3875133e7a115f2dc3fec2ed6786f75`)
-    
+  
     .then(resp=> resp.json())
     .then(data =>{
       this.setState({
@@ -29,7 +42,8 @@ export default class ResultadoBusqueda extends Component {
       <ResultadosContenedor busqueda= {this.state.busqueda}/>  
       </section>
       :
-      <h2>No se encontraron resultados para lo ingresado: {this.props.match.params.busqueda}</h2>
+      <h2>
+        No se encontraron resultados para lo ingresado: {this.props.match.params.busqueda}</h2>
       
     )
   }

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom"
 import "./styles.css"
 
+// intento
+import FormBusqueda from "../FormBusqueda/FormBusqueda";
 function Header(props){
 
     return(
@@ -15,7 +17,8 @@ function Header(props){
                         }
                     </ul>
                 </nav>
-
+                
+                <FormBusqueda/>
             </header>
     )
     

@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 //2 grupos de contenido 
 import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
 import CartelContenedor from '../Components/CartelContenedor/CartelContenedor'
-import FormBusqueda from "../Components/FormBusqueda/FormBusqueda";
+// import FormBusqueda from "../Components/FormBusqueda/FormBusqueda";
 import Loader from '../Components/Loader/Loader';
-// import FormBusqueda from '../../Components/FormBusqueda/FormBusqueda'
 import { Link } from 'react-router-dom'
 let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 let PeliculasCartel = "https://api.themoviedb.org/3/movie/top_rated?api_key=d3875133e7a115f2dc3fec2ed6786f75"
@@ -65,7 +64,7 @@ class Home extends Component {
             :
             <main>
                 
-                <FormBusqueda history={this.props.history}/>
+                {/* <FormBusqueda history={this.props.history}/> */}
                 {/* componenete de search se le envia el filtrarfilms con el valor Input  */}
                 <h2 className="titles">Peliculas  Populares</h2>
 

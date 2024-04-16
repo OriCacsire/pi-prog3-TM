@@ -5,6 +5,9 @@ footer{
     align-items: center;
     justify-content: space-evenly;
     height: 16vh;
+    width: 100%;
+    position: relative;
+    padding-bottom: 4px;
 }
 
 .names{

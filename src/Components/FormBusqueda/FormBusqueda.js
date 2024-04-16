@@ -8,19 +8,25 @@ class FormBusqueda extends Component {
       valor: ""
     }
   }
-  evitarSubmit(event) {
-    event.preventDefault()
+  evitarSubmit(evento) {
+    evento.preventDefault()
     this.props.history.push('/busqueda/' + this.state.valor)
   }
-  contolarCambios(event) {
-    this.setState({ valor: event.target.value })
+  contolarCambios(evento) {
+    this.setState({ valor: evento.target.value })
   }
   render() {
     return (
       <div className="formularioSearch">
 
-        <form onSubmit={(event) => this.evitarSubmit(event)}>
-          <input type="search" className="searchInput" name="busqueda" placeholder="Buscar..." onChange={(event) => this.contolarCambios(event)} value={this.state.valor} />
+        <form onSubmit={(evento) => this.evitarSubmit(evento)}>
+          <input 
+          type="search" 
+          className="searchInput" 
+          name="busqueda" 
+          placeholder="Buscar..." 
+          onChange={(evento) => this.contolarCambios(evento)} value={this.state.valor} />
+          
           <Link to={`/busqueda/${this.state.valor}`}>
             <button className="searchInput" type="submit" ><i className="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
           </Link>

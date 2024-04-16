@@ -4,7 +4,7 @@ import "./styles.css"
 export default function Loader() {
   return (
     <main>
-      <img src="./img/loaderGif.gif" />
+      <img src="./img/loader.gif" alt="Cargando..." />
     </main>
   )
 }
