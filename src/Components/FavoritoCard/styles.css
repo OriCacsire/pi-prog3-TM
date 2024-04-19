@@ -1,13 +1,9 @@
-.articleMovie{
-    width: 18%;
+
+
+.articleFavorito{
+    width: min-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-
-}
-
-.detalleBtn{
-    text-decoration: underline;
-    color: #fff;
 }

@@ -78,7 +78,7 @@ this.setState({
 
       <article className='contenerPelicula'>
         <div className='divImgPeli'>
-          <img  src={'https://image.tmdb.org/t/p/w500' + this.props.peliculaInfoId.poster_path} alt='img'></img>
+          <img  className='imgDetalle' src={'https://image.tmdb.org/t/p/w500' + this.props.peliculaInfoId.poster_path} alt='img'></img>
         </div>
 
         <div className='contenidoPelicula'>

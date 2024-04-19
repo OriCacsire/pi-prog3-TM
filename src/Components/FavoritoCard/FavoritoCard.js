@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import "./styles.css"
 
 class Cartel extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class Cartel extends Component {
   render() {
     return (
       
-      <article className='articleMovie'>
+      <article className='articleFavorito'>
         
         {/* la informacion de las props se recibe de cartelContenedor */}
         <img className='imgHomeCartel' src= {this.props.imagen} alt ="img"/>
@@ -84,7 +85,7 @@ class Cartel extends Component {
       </Link>
 
       {
-                <button className='favBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
+                <button className='descripBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
       }
 
       </article>

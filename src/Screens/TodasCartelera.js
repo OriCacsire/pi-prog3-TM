@@ -71,10 +71,11 @@ class TodasCartelera extends Component {
     render() {
     return (
         <main>
-            <h2 className='titleCartelera'>Peliculas en Cartelera</h2>
-
-            <FormFiltro 
-            filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
+            <div className='contenedorTitle'>
+                <FormFiltro 
+                filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
+                <h2 className='titleCartelera'>Peliculas en Cartelera</h2>
+            </div>
 
             <CartelContenedor 
             filmsCartel = {this.state.filmsCartel}

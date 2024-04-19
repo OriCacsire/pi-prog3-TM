@@ -40,7 +40,8 @@ class Favorito extends Component {
 
   render() {
     return (
-      <main>
+      <main className='mainFavorito'>
+        <h2 className="titles">Favoritos</h2>
         <FavoritosContenedor 
           actualizarState={(idPelicula) => this.actualizarState(idPelicula)}
           filmsFavoritos={this.state.favoritos}

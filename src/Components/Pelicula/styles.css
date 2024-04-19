@@ -1,6 +1,5 @@
 .contenerPelicula{
     display: flex;
-    height: 51vh;
     flex-direction: row;
     margin-top: 55px;
     margin-bottom: 54px;
@@ -11,7 +10,6 @@
     padding-left: 0px;
 }
 .divImgPeli{
-    height: 50vh;
     padding: 15px;
 }
 .contenidoPelicula{
@@ -25,3 +23,32 @@
     margin-right: 15px;
     padding: 10px;
 }
+
+.imgDetalle{
+    height: 500px
+}
+
+@media(max-width: 420px){
+    .sinopsis{
+        width: 90%;
+    }
+
+    .contenerPelicula {
+        flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .contenidoPelicula {
+        margin-right: 0; 
+        margin-left: 10px;
+    }
+
+    .divImgPeli {
+        padding: 0; 
+        align-self: center;
+        margin-top: 7px;
+    }
+    
+}
+

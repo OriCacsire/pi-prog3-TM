@@ -16,3 +16,16 @@ footer{
     font-family: sans-serif;   
      
 }
+
+@media(max-width: 420px){
+    footer{
+        height: 11vh;
+    }
+    
+    .names{
+        font-size:11px;
+    }
+    
+  
+   
+}

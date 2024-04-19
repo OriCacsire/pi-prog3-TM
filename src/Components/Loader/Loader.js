@@ -1,10 +1,9 @@
 import React from 'react'
-import "./styles.css"
 
 export default function Loader() {
   return (
     <main>
-      <img src="./img/loader.gif" alt="Cargando..." />
+      <h1>Cargando...</h1>
     </main>
   )
 }

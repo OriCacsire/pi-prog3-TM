@@ -21,11 +21,7 @@ class Populares extends Component {
     this.checkFavorite()
   }
 
-componentDidUpdate(prevProps){ //prevProps trae las props antiguas del componente
-  if (prevProps.id !== this.props.id) { //Entonces esto valida que no se este evaluando devuelta la misma pelicula que antes, para no ejecutar innecesariamente this.checkFavorite
-    this.checkFavorite();
-  }
-}
+
 
   checkFavorite(){
     let favoritoStringificado = localStorage.getItem("Favoritos")
@@ -132,9 +128,9 @@ componentDidUpdate(prevProps){ //prevProps trae las props antiguas del component
 
     {
               this.state.favorito  ?
-              <button className='favBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
+              <button className='descripBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
               :
-              <button onClick={()=> this.addFavorite(this.props.id)}>🩶 Agregar a Favorito</button>
+              <button className='descripBtn' onClick={()=> this.addFavorite(this.props.id)}>🩶 Agregar a Favorito</button>
 
     
     }

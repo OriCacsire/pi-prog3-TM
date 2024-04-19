@@ -10,9 +10,22 @@ class Resultados extends Component {
       favorito: false
     }
   }
+
   componentDidMount() {
-    // favoritos punto 9
+    //Chequeo si está en favoritos
+    this.checkFavorite()
   }
+
+
+  checkFavorite(){
+    let favoritoStringificado = localStorage.getItem("Favoritos")
+    if (favoritoStringificado !== null) {
+      let arrParseado = JSON.parse(favoritoStringificado)
+      let favorito = arrParseado.includes(this.props.id)
+      this.setState({favorito : favorito})
+    }
+  }
+
   ocultarYMostrarContenido(){
     this.state.contenidoOculto === true ?
     this.setState({
@@ -92,9 +105,9 @@ class Resultados extends Component {
     </Link>
     {
               this.state.favorito  ?
-              <button className='favBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
+              <button className='descripBtn' onClick={()=> this.removeFavorite(this.props.id)}>❤️ Sacar de Favorito</button>
               :
-              <button onClick={()=> this.addFavorite(this.props.id)}>🩶 Agregar a Favorito</button>
+              <button className='descripBtn' onClick={()=> this.addFavorite(this.props.id)}>🩶 Agregar a Favorito</button>
     }
     </article>
     )

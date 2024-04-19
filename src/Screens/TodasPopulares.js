@@ -58,10 +58,13 @@ let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d38
 render() {
     return (
       <main>
-            <h2 className='titleCartelera'>Peliculas Populares</h2>
+            <div className='contenedorTitle'>
+                <FormFiltro 
+                filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
 
-            <FormFiltro 
-            filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>
+                <h2 className='titleCartelera'>Peliculas Populares</h2>
+            </div>
+            
 
             <PopularesContenedor 
             filmPopulares = {this.state.filmPopulares}

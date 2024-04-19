@@ -48,3 +48,29 @@ header{
     color: white;
     
 }
+
+@media(max-width: 420px){
+    .logoHeader {
+        width: 15%;
+        order: -2;
+    }
+
+    .listaMenu {
+        width: 100vw;
+        padding: 2px;
+        display: block; 
+        
+    }
+
+    header{
+        padding-top: 10px;
+    }
+
+    .formularioSearch{
+        order: -1;
+    }
+
+
+
+
+}
