@@ -4,12 +4,14 @@ import "./styles.css"
 
 // intento
 import FormBusqueda from "../FormBusqueda/FormBusqueda";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 function Header(props){
 
     return(
             <header>
-                <img className="logoHeader" src="./img/logoPage.png" alt="logo" />
-
+                 <Link className="contendorLogo" to="/"> <img className="logoHeader" src="./img/logoPage.png" alt="logo" /></Link> 
+                
+                
                 <nav>
                     <ul className="listaMenu"> 
                         {

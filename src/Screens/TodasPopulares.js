@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PopularesContenedor from '../Components/PopularesContenedor/PopularesContenedor'
 import FormFiltro from '../Components/FormFiltro/FormFiltro'
+import Loader from '../Components/Loader/Loader'
 
 let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d3875133e7a115f2dc3fec2ed6786f75"
 
@@ -57,6 +58,9 @@ let PeliculasPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=d38
 
 render() {
     return (
+        this.state.backup.length === 0 ?
+        <Loader/>
+        :
       <main>
             <div className='contenedorTitle'>
                 <FormFiltro 

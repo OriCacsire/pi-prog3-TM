@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import FavoritosContenedor from '../Components/FavoritosContenedor/FavoritosContenedor'
+import Loader from '../Components/Loader/Loader'
 
 class Favorito extends Component {
   constructor(props){
     super(props)
     this.state = {
-      favoritos: []
-      
+      favoritos: [],
+      cargoFavoritos: false      
     }
   }
 
@@ -22,7 +23,8 @@ class Favorito extends Component {
       )
           .then(data => {
               this.setState({
-                favoritos: data
+                favoritos: data,
+                cargoFavoritos: true
               })
           })
           .catch(error=>console.log(error))
@@ -40,13 +42,22 @@ class Favorito extends Component {
 
   render() {
     return (
-      <main className='mainFavorito'>
-        <h2 className="titles">Favoritos</h2>
-        <FavoritosContenedor 
-          actualizarState={(idPelicula) => this.actualizarState(idPelicula)}
-          filmsFavoritos={this.state.favoritos}
-        />
-      </main>
+      
+      this.state.cargoFavoritos === false ?
+        <Loader/>
+        :
+        this.state.favoritos.length === 0 ?
+          <main>
+            <h1 className='titles'>No hay favoritos</h1>
+          </main>
+          :
+          <main className='mainFavorito'>
+            <h2 className="titles">Favoritos</h2>
+            <FavoritosContenedor 
+              actualizarState={(idPelicula) => this.actualizarState(idPelicula)}
+              filmsFavoritos={this.state.favoritos}
+            />
+          </main>
     )
   }
 }

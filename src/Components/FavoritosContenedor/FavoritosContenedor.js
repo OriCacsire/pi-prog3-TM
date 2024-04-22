@@ -13,9 +13,6 @@ import "./styles.css"
       <section className='ContenedorCartel'>
         
         {
-          this.props.filmsFavoritos.length === 0 ?
-          <h1 className='titles'>No hay favoritos</h1>
-          :
           this.props.filmsFavoritos.map((peliFavs, idx)=>
             <FavoritoCard
             key={idx+peliFavs}

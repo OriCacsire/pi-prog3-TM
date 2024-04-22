@@ -31,6 +31,7 @@
 @media(max-width: 420px){
     .sinopsis{
         width: 90%;
+        margin-top: 7px;
     }
 
     .contenerPelicula {
@@ -49,6 +50,16 @@
         align-self: center;
         margin-top: 7px;
     }
+    .generoList{
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+    }
+    .liGeneroList{
+        margin-bottom: 8px;
+    }
+
+
     
 }
 

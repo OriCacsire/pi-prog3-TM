@@ -27,7 +27,7 @@ import Loader from '../Components/Loader/Loader';
                 console.log(data);
             })
             .catch(error => console.log(error))
-      }, 2000
+      }, 800
     )
     
   }
