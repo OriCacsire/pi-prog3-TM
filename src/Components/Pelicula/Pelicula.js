@@ -100,9 +100,9 @@ this.setState({
 
           {/* tira ERROR porque falta plantear el fav acá*/}
           {this.state.favorito ?
-            <button className='favBtn' onClick={() => this.removeFavorite(this.props.peliculaInfoId.id)}>❤️ Sacar de Favorito</button>
+            <button className='descripBtn' onClick={() => this.removeFavorite(this.props.peliculaInfoId.id)}>❤️ Sacar de Favorito</button>
             :
-            <button onClick={() => this.addFavorite(this.props.peliculaInfoId.id)}>🩶 Agregar a Favorito</button>
+            <button className='descripBtn' onClick={() => this.addFavorite(this.props.peliculaInfoId.id)}>🩶 Agregar a Favorito</button>
           }
         </div>
 

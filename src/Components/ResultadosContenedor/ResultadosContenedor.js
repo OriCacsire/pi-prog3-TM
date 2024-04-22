@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Resultados from '../Resultados/Resultados'
-import "./styles.css"
 
 class ResultadosContenedor extends Component {
   constructor(props){

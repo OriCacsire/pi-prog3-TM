@@ -22,6 +22,10 @@ main{
     
 }
 
+.titlesWithMargin{
+    margin-left: 15px;
+}
+
 /* Home */
 
 .sectionBusqueda{
@@ -92,14 +96,20 @@ main{
     color: white;
 }
 
-/* Carteleras */
+
+/* Ver todas (peliculas más populares y peliculas en cartelera) */
 
 .contenedorTitle{
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 52%;
     margin-left: 82px;
 }
+
+.mainVerTodas{
+    justify-content: space-between;
+}
+
 
 
 

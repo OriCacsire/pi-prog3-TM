@@ -1,19 +1,13 @@
 import React from 'react'
 import "./styles.css"
 
-function Footer() {
+function Footer(props) {
 
     return (
         <footer>
-                <article className='names'>
-                    Francisco del Yerro
-                </article>
-                <article className='names'>
-                    Tomás Kearney
-                </article>
-                <article className='names'>
-                    Oriana Cacsire
-                </article>
+            {
+                props.integrantes.map((elm, idx) => <article key={`${idx}${elm.nombre}`} className='names'> {elm.nombre}</article>)
+            }    
         </footer>
     )
 

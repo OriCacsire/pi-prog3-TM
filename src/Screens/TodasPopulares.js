@@ -61,7 +61,7 @@ render() {
         this.state.backup.length === 0 ?
         <Loader/>
         :
-      <main>
+      <main className='mainVerTodas'>
             <div className='contenedorTitle'>
                 <FormFiltro 
                 filtrarPeliculas ={(valorInput)=> this.filtrarPeliculas(valorInput)}/>

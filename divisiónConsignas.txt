@@ -1,0 +1,17 @@
+Grupos de 3:
+	Oriana Cacsire:
+		-Header y Footer
+		-Home
+		-1 pagina de Ver Todas
+		-1 Pagina detalle
+
+	Francisco del Yerro:
+		-Resultados de busqueda
+		-Pagina de not found
+		-1 Pagina de Ver Todas
+		-Loader
+
+	Tomás Kearney:
+		-Navegación
+		-Favoritos
+		-1 Pagina detalle

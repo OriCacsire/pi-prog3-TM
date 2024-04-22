@@ -53,8 +53,7 @@ export default class ResultadoBusqueda extends Component {
         </main>
         :
         <main>
-          <h2>
-            No se encontraron resultados para lo ingresado: {this.props.match.params.busqueda}</h2>
+          <h2 className='titlesWithMargin'>No se encontraron resultados para lo ingresado: {this.props.match.params.busqueda}</h2>
         </main>
     )
   }

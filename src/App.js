@@ -30,6 +30,12 @@ let menu = [
   }
 ]
 
+let integrantes = [
+  {nombre: "Tomás Kearney"},
+  {nombre: "Francisco del Yerro"},
+  {nombre: "Oriana Cacsire"}
+]
+
 function App() {
 
   return (
@@ -51,7 +57,7 @@ function App() {
         
       </Switch>
 
-      <Footer />
+      <Footer integrantes={integrantes} />
     </React.Fragment>
   );
 }
